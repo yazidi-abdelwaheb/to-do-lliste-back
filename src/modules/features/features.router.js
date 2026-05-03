@@ -1,16 +1,14 @@
-import express from 'express';
+import {Router} from 'express';
 import featuresController from './features.controller.js';
-const routers = express.Router();
+const routers = Router();
 
 routers.get( '/', featuresController.getList);
-// ****** Create one ******** //
-routers.post('/', featuresController.createOne);
+
 // ****** Read one ******** //
 routers.get('/:id', featuresController.readOne);
 // ****** Update one ******** //
 routers.patch('/:id', featuresController.updateOne);
-// ****** Delete one ******** //
-routers.delete('/:id', featuresController.deleteOne);
+
 
 
 export default routers;

@@ -1,6 +1,6 @@
-import express from 'express';
+import {Router} from 'express';
 import tasksController from './tasks.controller.js';
-const routers = express.Router();
+const routers = Router();
 
 routers.get( '/', tasksController.getList);
 // ****** Create one ******** //

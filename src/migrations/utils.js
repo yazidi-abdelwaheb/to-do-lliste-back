@@ -3,10 +3,7 @@ import readline from "readline";
 import { fileURLToPath } from "url";
 import fs from "fs";
 
-/**
- * define all commands and aliases for system
- */
-export const migration_system_commands_names = ["migration", "mg"];
+
 
 /**
  *
@@ -107,26 +104,4 @@ export const loadData = async (dataname) => {
   }
 };
 
-/**
- * function to init all principale migration before run a server en mode prod
- * @returns {Promise<void>}
- */
-export const init_migration = async () => {
-  try {
-    // deleted migration create-super-admin from a principale migration en mode prod
-    const migrations_data = getListMigrationName().filter(
-      (e) => e.name !== "create-super-admin",
-    );
-    for (const migration of migrations_data) {
-      const filePath = `./migrations-files/${migration.filePath.replace(
-        "#",
-        "%23",
-      )}`;
-      console.log();
-      await import(filePath);
-    }
-  } catch (error) {
-    console.log(error.message);
-    throw error;
-  }
-};
+

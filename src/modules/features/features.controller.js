@@ -5,7 +5,7 @@ const model = Features
 
 export default class FeaturesController{
   static async getList(req, res) {
-    try {
+    /*try {
       const { search, limit, page } = req.query;
   
       const { data, totalelement, totalPages, currentPage, pageLimit } =
@@ -20,18 +20,10 @@ export default class FeaturesController{
       });
     } catch (error) {
       return errorCatch(req,res,error);
-    }
+    }*/
   }
 
-  static async createOne (req, res)   {
-    try {
-      const { feature } = req.body;
-      await new model(feature).save();
-      res.status(200).json({ message: "Feature saved successfully." });
-    } catch (error) {
-      return errorCatch(req,res,error);
-    }
-  };
+  
   
  
   
@@ -54,14 +46,7 @@ export default class FeaturesController{
     }
   };
   
-  static async deleteOne (req, res)   {
-    try {
-      await model.findByIdAndDelete(req.params.id);
-      res.status(200).json({ message: "Feature deleted successfully." });
-    } catch (error) {
-      return errorCatch(req,res,error);
-    }
-  };
+  
 
   
 }

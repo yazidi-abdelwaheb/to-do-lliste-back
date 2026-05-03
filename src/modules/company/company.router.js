@@ -1,6 +1,6 @@
-import express from 'express';
+import {Router} from 'express';
 import featuresController from './company.controller.js';
-const routers = express.Router();
+const routers = Router();
 
 routers.get( '/', featuresController.getList);
 // ****** Create one ******** //

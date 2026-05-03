@@ -5,7 +5,7 @@ const model = Features
 
 export default class FeaturesController{
   static async getList(req, res) {
-    try {
+    /*try {
       const { search, limit, page } = req.query;
   
       const { data, totalelement, totalPages, currentPage, pageLimit } =
@@ -20,7 +20,7 @@ export default class FeaturesController{
       });
     } catch (error) {
       return errorCatch(req,res,error);
-    }
+    }*/
   }
 
   static async createOne (req, res)   {

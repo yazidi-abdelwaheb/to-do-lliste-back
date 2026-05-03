@@ -3,71 +3,69 @@ import { getListMigrationName } from "./utils.js";
 import runMigration from "./run-migration.js";
 import { newFileData, newMigration } from "./new-files.js";
 
-/**
- * migration system configuration command line
- *
- * use by command name "migration" or alias "mg" :
- *  `npm run migration --help` or `npm run mg --help`
- *
- *@example
- * ```sh
- * npm run migration --help #Output all option
- * ```
- * @returns {commander.command} commander.command
- */
-async function migration_system() {
-  return program
-    .command("migration")
-    .alias("mg")
-    .description(
-      "Migration system for manegment migration files. \n To be run or create a new migration file with the specified migration name.",
-    )
-    .version("1.0.0", "-v, --version", "output the current version")
-    .usage("<option> [value]")
-    .option(
-      "-n, --new <migration-name>",
-      'Create a new migration file in "@/src/migrations/migrations-files"',
-    )
-    .option(
-      "-N, --newdata <data-file-name>",
-      'Create a new data file in "@/src/migrations/data"',
-    )
-    .option(
-      "-r, --run <migration-name>",
-      'Run the migration file from "@/src/migrations/migrations-files"',
-    )
-    .option("-a, --all", "View all migrations names")
+const choice = ["help", "all", "new", "run", "new_data"];
 
-    .action(async (args) => {
-      if (args.all) {
-        console.log("");
-        console.log("View all migrations");
-        console.log("");
-        console.table(getListMigrationName());
-      } else if (args.new) {
-        console.log("");
-        console.log("create new migration : " + args.new);
-        console.log("");
-        await newMigration(args.new);
-      } else if (args.newdata) {
-        console.log("");
-        console.log("create new data file : " + args.newdata);
-        console.log("");
-        await newFileData(args.newdata);
-      } else if (args.run) {
-        console.log("");
+async function migration_system() {
+  const option = process.argv[2];
+  const param = process.argv[3];
+
+  switch (option) {
+    case "help": {
+      console.log(`
+        Migration system for manegment migration files.
+        To be run or create a new migration file with the specified migration name.
+
+
+        npm run migration new <migration-name>
+        Create a new migration file in "@/src/migrations/migrations-files"
+
+        npm run migration new_data <data-file-name>
+        Create a new data file in "@/src/migrations/data"
+
+        npm run migration run <migration-name>
+        Run the migration file from "@/src/migrations/migrations-files"
+        
+        npm run migration all , View all migrations names
+        
+        `);
+      break
+    }
+    case "all": {
+      console.log("");
+      console.log("View all migrations");
+      console.log("");
+      console.table(getListMigrationName());
+      break
+    }
+    case "new": {
+      console.log("");
+      console.log("create new migration : " + param);
+      console.log("");
+      await newMigration(param);
+      break
+    }
+    case "new_data": {
+      console.log("");
+      console.log("create new data file : " + param);
+      console.log("");
+      await newFileData(param);
+      break
+    }
+    case "run" : {
+       console.log("");
         console.log("run migration : " + args.run);
         console.log("");
         await runMigration(args.run);
-      } else {
-        console.log("");
+        break
+    }
+    default : {
         console.log(
-          "Choix option for manegment your migration . Run --help for view all migration option ",
+          "Choice valid option for manage your migration . Run ```npm run migration help``` for view all migration option ",
         );
         console.log("");
-      }
-    })
-    .parse(process.argv);
+        break
+    }
+  }
 }
 
-export { migration_system };
+await migration_system();

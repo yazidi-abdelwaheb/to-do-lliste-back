@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { _2FA_TYPE, USER_TYPE_ENUM } from "../../shared/index.js";
+import { _2FA_TYPE, USER_TYPE_ENUM } from "../../../shared/index.js";
 
 const UsersSchema = new Schema(
   {
@@ -30,12 +30,12 @@ const UsersSchema = new Schema(
       enum: USER_TYPE_ENUM,
       default: USER_TYPE_ENUM.admin,
     },
-    avatar: { type: string },
+    avatar: { type: String },
     isActive : {
       type : Boolean,
       default : true
     },
-    isNew : {
+    new : {
       status : {
         type : Boolean,
         default : true,

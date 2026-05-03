@@ -1,7 +1,7 @@
-import express from 'express';
+import {Router} from 'express';
 import UsersController from './users.controller.js';
 
-const routers = express.Router();
+const routers = Router();
 
 routers.get( '/', UsersController.getList);
 // ****** Create one ******** //

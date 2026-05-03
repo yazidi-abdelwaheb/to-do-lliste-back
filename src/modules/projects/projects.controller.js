@@ -5,7 +5,7 @@ const model = Project;
 
 export default class UsersController {
   static async getList(req, res) {
-    try {
+    /*try {
       const { search, limit, page } = req.query;
 
       //const { data, totalelement, totalPages, currentPage, pageLimit } =
@@ -20,7 +20,7 @@ export default class UsersController {
       });
     } catch (error) {
       return errorCatch(error, res);
-    }
+    }*/
   }
 
   static async createOne(req, res) {

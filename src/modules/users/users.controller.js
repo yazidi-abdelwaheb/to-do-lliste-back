@@ -1,11 +1,11 @@
-import Users from "./user.schema.js"
+import Users from "./schema/user.schema.js"
 import { errorCatch  } from "../../shared/index.js";
 
 const model = Users 
 
 export default class UsersController{
   static async getList(req, res) {
-    try {
+    /*try {
       const { search, limit, page } = req.query;
   
      // const { data, totalelement, totalPages, currentPage, pageLimit } =
@@ -20,7 +20,7 @@ export default class UsersController{
       });
     } catch (error) {
       return errorCatch(req,res,error);
-    }
+    }*/
   }
 
   static async createOne (req, res)   {

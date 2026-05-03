@@ -1,10 +1,10 @@
 import Tasks from "./tasks.schema.js";
-import { errorCatch, paginatorsSearched } from "../../shared/index.js";
+import { errorCatch } from "../../shared/index.js";
 const model = Tasks;
 
 export default class TasksController {
   static async getList(req, res) {
-    try {
+    /*try {
       const { search, limit, page } = req.query;
 
       //const { data, totalelement, totalPages, currentPage, pageLimit } =
@@ -20,7 +20,7 @@ export default class TasksController {
     } catch (error) {
       console.log(error);
       return errorCatch(req,res,error);
-    }
+    }*/
   }
 
   static async createOne(req, res) {

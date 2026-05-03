@@ -69,7 +69,6 @@ const createSuperAdminMigration = async() => {
       firstName,
       password : hashedPassword,
       type: USER_TYPE_ENUM.super,
-      accountActive: true,
     });
     
     
