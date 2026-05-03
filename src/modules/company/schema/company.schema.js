@@ -18,7 +18,8 @@ const CompanySchema = new Schema(
     nbrUsers: {
       type: Number,
       required: true,
-      enum: [1, 5, 10, 20, 50, 100],
+      min : 1,
+      max : 100,
       default: 1,
     },
   },

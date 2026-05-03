@@ -1,11 +1,11 @@
 import { errorCatch } from "../../shared/index.js";
-import Features from "./company.schema.js";
+import Company from "./schema/company.schema.js";
 
-const model = Features 
+const model = Company 
 
-export default class FeaturesController{
+export default class CompanyController{
   static async getList(req, res) {
-    /*try {
+    try {
       const { search, limit, page } = req.query;
   
       const { data, totalelement, totalPages, currentPage, pageLimit } =
@@ -20,14 +20,14 @@ export default class FeaturesController{
       });
     } catch (error) {
       return errorCatch(req,res,error);
-    }*/
+    }
   }
 
   static async createOne (req, res)   {
     try {
-      const { feature } = req.body;
-      await new model(feature).save();
-      res.status(200).json({ message: "Feature saved successfully." });
+      const { company } = req.body;
+      await new model(company).save();
+      res.status(200).json({ message: "Company saved successfully." });
     } catch (error) {
       return errorCatch(req,res,error);
     }
@@ -37,8 +37,8 @@ export default class FeaturesController{
   
   static async readOne (req, res)   {
     try {
-      const feature = await model.findById(req.params.id);
-      res.status(200).json(feature);
+      const company = await model.findById(req.params.id);
+      res.status(200).json(company);
     } catch (error) {
       return errorCatch(req,res,error);
     }
@@ -46,9 +46,9 @@ export default class FeaturesController{
   
   static async updateOne (req, res)   {
     try {
-      const { feature } = req.body;
-      await model.findByIdAndUpdate(req.params.id, feature);
-      res.status(200).json({ message: "Feature updeted successfully." });
+      const { company } = req.body;
+      await model.findByIdAndUpdate(req.params.id, company);
+      res.status(200).json({ message: "Company updated successfully." });
     } catch (error) {
       return errorCatch(req,res,error);
     }

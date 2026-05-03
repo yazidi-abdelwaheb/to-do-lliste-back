@@ -1,9 +1,9 @@
 import { errorCatch } from "../../shared/index.js";
-import Project from "./projects.schema.js";
+import Project from "./schema/projects.schema.js";
 
 const model = Project;
 
-export default class UsersController {
+export default class ProjectController {
   static async getList(req, res) {
     /*try {
       const { search, limit, page } = req.query;
@@ -47,7 +47,7 @@ export default class UsersController {
     try {
       const { project } = req.body;
        await model.findByIdAndUpdate(req.params.id, project);
-      res.status(200).json({ message: "Project updeted successfully." });
+      res.status(200).json({ message: "Project updated successfully." });
     } catch (error) {
       return errorCatch(error, res);
     }

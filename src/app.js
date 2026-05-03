@@ -9,6 +9,9 @@ import tasksRouter from './modules/tasks/tasks.router.js';
 import usersRouter from './modules/users/users.router.js';
 import featuresRouter from './modules/features/features.router.js';
 import groupsRouter from './modules/groups/group.router.js';
+import CompanyRouter from './modules/company/company.router.js';
+import projectRouter from './modules/projects/projects.router.js';
+
 
 
 
@@ -40,6 +43,8 @@ app.use('/api/tasks', tasksRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/features', featuresRouter);
 app.use('/api/groups', groupsRouter);
+app.use('/api/project', projectRouter);
+app.use('/api/company', CompanyRouter);
 
 
 

@@ -13,7 +13,6 @@ const projectUserSchema = new mongoose.Schema(
       enum: ["owner", "collaborator", "viewer"],
       default: "viewer",
     },
-    addedAt: { type: Date, default: Date.now },
   },
   { timestamps: true }
 );

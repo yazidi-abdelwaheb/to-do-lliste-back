@@ -1,17 +1,17 @@
 import {Router} from 'express';
-import UsersController from './users.controller.js';
+import ProjectController from './users.controller.js';
 
 const routers = Router();
 
-routers.get( '/', UsersController.getList);
+routers.get( '/', ProjectController.getList);
 // ****** Create one ******** //
-routers.post('/', UsersController.createOne);
+routers.post('/', ProjectController.createOne);
 // ****** Read one ******** //
-routers.get('/:id', UsersController.readOne);
+routers.get('/:id', ProjectController.readOne);
 // ****** Update one ******** //
-routers.put('/:id', UsersController.updateOne);
+routers.put('/:id', ProjectController.updateOne);
 // ****** Delete one ******** //
-routers.delete('/:id', UsersController.deleteOne);
+routers.delete('/:id', ProjectController.deleteOne);
 
 
 

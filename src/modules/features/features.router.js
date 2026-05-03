@@ -7,7 +7,7 @@ routers.get( '/', featuresController.getList);
 // ****** Read one ******** //
 routers.get('/:id', featuresController.readOne);
 // ****** Update one ******** //
-routers.patch('/:id', featuresController.updateOne);
+routers.put('/:id', featuresController.updateOne);
 
 
 
