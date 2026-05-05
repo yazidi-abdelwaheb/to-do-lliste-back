@@ -43,6 +43,10 @@ git clone https://github.com/yazidi-abdelwaheb/to-do-lliste-back
 2. Installer les dépendances :
 
 ```bash
+cd to-do-lliste-back
+```
+
+```bash
 npm install
 ```
 
@@ -92,12 +96,6 @@ Le projet utilise les variables suivantes :
 ### Sans Docker
 
 ```bash
-npm run start:local
-```
-
-ou
-
-```bash
 npm run start:dev
 ```
 
@@ -116,52 +114,6 @@ Le backend sera alors accessible sur `http://localhost:8400` si les ports du `do
 - `GET /api/version`
   - Retourne la version et la description de l'API.
 
-### Tâches
-
-- `GET /api/tasks` : lister toutes les tâches
-- `POST /api/tasks` : créer une tâche
-- `GET /api/tasks/:id` : lire une tâche par ID
-- `PUT /api/tasks/:id` : mettre à jour une tâche par ID
-- `DELETE /api/tasks/:id` : supprimer une tâche par ID
-- `PATCH /api/tasks/:id/complited` : marquer une tâche comme complétée
-
-### Utilisateurs
-
-- `GET /api/users` : lister tous les utilisateurs
-- `POST /api/users` : créer un utilisateur
-- `GET /api/users/:id` : lire un utilisateur par ID
-- `PUT /api/users/:id` : mettre à jour un utilisateur par ID
-- `DELETE /api/users/:id` : supprimer un utilisateur par ID
-
-### Fonctionnalités
-
-- `GET /api/features` : lister toutes les fonctionnalités
-- `GET /api/features/:id` : lire une fonctionnalité par ID
-- `PUT /api/features/:id` : mettre à jour une fonctionnalité par ID
-
-### Groupes
-
-- `GET /api/groups` : lister tous les groupes
-- `POST /api/groups` : créer un groupe
-- `GET /api/groups/:id` : lire un groupe par ID
-- `PUT /api/groups/:id` : mettre à jour un groupe par ID
-- `DELETE /api/groups/:id` : supprimer un groupe par ID
-
-### Projets
-
-- `GET /api/project` : lister tous les projets
-- `POST /api/project` : créer un projet
-- `GET /api/project/:id` : lire un projet par ID
-- `PUT /api/project/:id` : mettre à jour un projet par ID
-- `DELETE /api/project/:id` : supprimer un projet par ID
-
-### Société
-
-- `GET /api/company` : lister toutes les sociétés
-- `POST /api/company` : créer une société
-- `GET /api/company/:id` : lire une société par ID
-- `PUT /api/company/:id` : mettre à jour une société par ID
-- `DELETE /api/company/:id` : supprimer une société par ID
 
 ## Architecture et bonnes pratiques
 
