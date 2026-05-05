@@ -38,7 +38,6 @@ const groupFeatureSchema = new Schema(
     }
     
   },
-  { timestamps: true },
 );
 
 const GroupFeature = model("GroupFeature", groupFeatureSchema);
